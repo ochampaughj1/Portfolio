@@ -1,0 +1,24 @@
+<!--container holding all series contents-->
+<div class="container">
+    <!--series header for author page-->
+    <div *ngIf="displayType == 'author-page'">
+      <div class="heading author-page">
+        <div><h1 class="series-link" (click)="seriesClick(series)">{{series.Title}}</h1></div>
+      </div>
+    </div>
+    <!--series header if not on author page-->
+    <div *ngIf="displayType == 'library-page'">
+      <div class="heading">
+        <div><h1 class="series-link" (click)="seriesClick(series)">{{series.Title}}</h1></div>
+        <!--Link to author-page-->
+        <div><p class="author-link"  (click)="authorClick(author)">{{author.AuthorName}}</p></div>
+      </div>
+    </div>
+  
+    <!--Series Books-->
+    <div class="gallery-container">
+      <div *ngFor="let currentBook of booksList">
+        <app-book [book]=currentBook></app-book>
+      </div>
+    </div>
+  </div>

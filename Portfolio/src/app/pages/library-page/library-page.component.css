@@ -1,0 +1,89 @@
+/*drop down button*/
+.dropbtn {
+    display: block;
+    background-color: #161b22f2;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.login-btn-container {
+    display:block;
+    position: absolute;
+    right: 0;
+}
+.login-btn {
+    clear:both;
+    margin-right: 5px;
+}
+.btn-border {
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+/*dropdown container*/
+.dropdown {
+    position: absolute;
+    display: block;
+}
+
+/*dropdown content*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 0 5px 5px 5px;
+    border: 1px solid #30363d;
+    background-color: #161b22f2;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    font-weight: bold;
+    list-style: none;
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+/*displays hidden dropdown content (uses JS script to toggle class)*/
+.show {
+    display:block;
+}
+
+/*handles filter overflow and scroll bar*/
+.filter-container {
+    max-height: 8rem;
+    overflow-y: auto;
+}
+.filter-container::-webkit-scrollbar {
+    background: #30363d;
+    width: 3px;
+}
+.filter-container::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+}
+
+/*stand alone book header*/
+h1 {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 0;
+    font-size: 50px;
+}
+
+.standAloneTitle {
+    padding-top:3rem;
+}
+
+/*creates spacing between elements NEEDS FIXED*/
+.spacer {
+    margin-top: 50px;
+    text-align: center;
+    color: red;
+    font-size: 25px;
+    margin-bottom: 20px;
+}

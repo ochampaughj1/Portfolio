@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #161b22f2;
+    color: white;
+}
+body::-webkit-scrollbar {
+    background: #30363d;
+    width: 5px;
+    height: 5px;
+}
+body::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+}
+
+/* DIALOG CSS*/
+.mdc-dialog__surface {
+    background-color: #373f4bf2 !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

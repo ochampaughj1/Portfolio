@@ -1,0 +1,65 @@
+<!--drop down container-->
+<div class="dropdown">
+    <!--button to show dropdown-->
+      <button id="filterBtn" onclick="myFunction()" class="dropbtn">☰</button>
+      <!--Dropdown Contents-->
+      <div id="myDropdown" class="dropdown-content">
+        <ul>
+          <!--Authors-->
+          <li>Authors:</li>
+          <div class="filter-container">
+            <div *ngFor="let author of authorList" class="filter-option">
+              <input type="checkbox" (change)="applyFilters(author)">{{author.AuthorName}}
+            </div>
+          </div>
+          <!--Genres-->
+          <li>Genre:</li>
+          <div class="filter-container">
+            <div *ngFor="let genre of genreList" class="filter-option">
+              <input type="checkbox" (change)="applyFilters(genre)">{{genre.GenreName}}
+            </div>
+          </div>
+          <!--Publishers-->
+          <li>Publisher:</li>
+          <div class="filter-container">
+            <div *ngFor="let publisher of publisherList" class="filter-option">
+              <input type="checkbox" (change)="applyFilters(publisher)">{{publisher.PublisherName}}
+            </div>
+          </div>
+        </ul>
+    </div>
+  </div>
+  
+  <!--
+  ////Wishlist and Account functionality for testing to be added
+  <button (click)="Wishlist()">WishList</button>
+  
+  Login Form Button
+  <div class="login-btn-container">
+    <button (click)="openLoginDialog()" class="dropbtn login-btn">login</button>
+  </div>
+  -->
+  
+  <!--temporary spacer to keep right button from effecting divs-->
+  <div class="spacer"><!--{{this.loggedIn}} {{this.user.Name}}--></div>
+   
+  <!--Displays list of series based on filters-->
+  <div *ngIf="filterActive == true; else elseBlock">
+    <div *ngFor="let currentSeries of filteredSeriesList;">
+      <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>
+    </div>
+    <div *ngIf="filteredAuthorList.length > 0"><h1>Stand Alone Books</h1></div>
+    <div *ngFor="let currentAuthor of filteredAuthorList">
+      <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="filteredStandAloneList"></app-stand-alone>
+    </div>
+  </div>
+  <!--Displays all series-->
+  <ng-template #elseBlock>
+    <div *ngFor="let currentSeries of seriesList;">
+      <app-series [series]=currentSeries [displayType]="'library-page'"></app-series>
+    </div>
+    <h1 class="standAloneTitle">Stand Alone Books</h1>
+    <div *ngFor="let currentAuthor of standAloneBookAuthors">
+      <app-stand-alone [standAloneAuthor]="currentAuthor" [standAloneBooksList]="standAloneBooks"></app-stand-alone>
+    </div>
+  </ng-template>
